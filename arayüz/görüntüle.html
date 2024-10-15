@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Görüntüleme Sayfası</title>
+
+    <style>
+      /* Genel yapı ve hizalamalar */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+div {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Daha küçük ekranlarda genişlik ayarlandı */
+  max-width: 500px; /* Maksimum genişlik belirlendi */
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Giriş alanı (daha küçük boyut) */
+input {
+  display: block;
+  width: 70%; /* Boyutu küçültüldü */
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box; /* Padding ve border ile genişliğin uyumlu olması için */
+}
+
+/* Datalist stili */
+datalist {
+  display: none; /* Datalist görünmez, sadece input ile etkileşimde */
+}
+
+/* Responsive tasarım */
+@media (max-width: 600px) {
+  div {
+    width: 100%;
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  input {
+    width: 100%; /* Küçük ekranlarda genişlik tam olacak şekilde ayarlandı */
+    font-size: 14px;
+  }
+}
+      /* input {
+        display: block;
+        margin-bottom: 16px;
+      }
+
+      .flex {
+        display: flex;
+        gap: 16px;
+      }
+      .flex {
+        display: flex;
+        gap: 16px;
+      }
+
+      .gizli {
+        display: none;
+      }
+      .goster {
+        display: block;
+      } */
+    </style>
+  </head>
+  <body>
+    <div>
+        <h1>Görüntülemek istediğinizi seçiniz.</h1>
+    </div>
+    <input id="inputList" list="browsers" />
+
+    <datalist id="browsers">
+      <option value="Belgeler"></option>
+      <option value="Birimler"></option>
+      <option value="Kaynaklar"></option>
+      <option value="Ürünler"></option>
+      <option value="Üretim Merkezleri"></option>
+      <option value="Kapsam Grupları"></option>
+      <option value="Emisyon Grupları"></option>
+      <option value="Tipler"></option>
+      <option value="Mesai Kayıt"></option>
+      <option value="Belge Takip"></option>
+      <option value="Üretim Kayıt Formu"></option>
+      <option value="Üretim Giriş"></option>
+      <option value="Emisyon Kayıt Formu"></option>
+      <option value="Kapsam 1"></option>
+      <option value="Kapsam 2"></option>
+      <option value="Kapsam 3"></option>
+    </datalist>
+     </body>
+    </html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sil Sayfası</title>
+
+    <style>
+  /* Genel yapı ve hizalamalar */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+div {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Giriş alanı (daha küçük boyut) */
+input {
+  display: block;
+  width: 70%; /* Boyutu küçültüldü */
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  margin-left: auto; /* Ortalamak için ekleniyor */
+  margin-right: auto; /* Ortalamak için ekleniyor */
+}
+
+/* Buton ortalama ve stil */
+button {
+  padding: 10px 16px;
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  display: block; /* Ortalamak için ekleniyor */
+  margin: 20px auto 0; /* Ortalamak için ve üst boşluk için ekleniyor */
+}
+
+button:hover {
+  background-color: #4cae4c;
+}
+
+/* Flexbox ile hizalama */
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Gizli ve görünür yapılar */
+.gizli {
+  display: none;
+}
+
+.goster {
+  display: block;
+}
+
+/* Responsive tasarım */
+@media (max-width: 600px) {
+  div {
+    width: 100%;
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  input {
+    width: 100%; /* Küçük ekranlarda genişlik tam olacak şekilde ayarlandı */
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
+      
+      /* input {
+        display: block;
+        margin-bottom: 16px;
+      }
+
+      .flex {
+        display: flex;
+        gap: 16px;
+      }
+      .flex {
+        display: flex;
+        gap: 16px;
+      }
+
+      .gizli {
+        display: none;
+      }
+      .goster {
+        display: block;
+      } */
+    </style>
+  </head>
+  <body>
+    <div>
+    <h1>Silmek İstediğinizi Seçiniz</h1>
+  </div>
+    <input id="inputList" list="browsers" />
+
+    <datalist id="browsers">
+      <option value="Belgeler"></option>
+      <option value="Birimler"></option>
+      <option value="Kaynaklar"></option>
+      <option value="Ürünler"></option>
+      <option value="Üretim Merkezleri"></option>
+      <option value="Kapsam Grupları"></option>
+      <option value="Emisyon Grupları"></option>
+      <option value="Tipler"></option>
+      <option value="Mesai Kayıt"></option>
+      <option value="Belge Takip"></option>
+      <option value="Üretim Kayıt Formu"></option>
+      <option value="Üretim Giriş"></option>
+      <option value="Emisyon Kayıt Formu"></option>
+      <option value="Kapsam 1"></option>
+      <option value="Kapsam 2"></option>
+      <option value="Kapsam 3"></option>
+    </datalist>
+    
+    <div class="gizli" id="Belgeler">
+      <h1>Belge Silme</h1>
+      <br />
+      <div>
+        <div class="flex">
+          <label> Belge No: </label>
+          <input type="text" name="" id="" />
+        </div>
+        <button>Sil</button>
+      </div>
+    </div>
+    <div class="gizli" id="Birimler">
+      <h1>Birim Silme</h1>
+      <br />
+      <div>
+        <div class="flex">
+          <label> Birim No: </label>
+          <input type="text" name="" id="" />
+        </div>
+        <button>Sil</button>
+      </div>
+    </div>
+    <div class="gizli" id="Kaynaklar">
+      <h1>Kaynak Silme</h1>
+      <br />
+        <div class="flex">
+          <label> Kaynak No: </label>
+          <input type="text" name="" id="" />
+        </div>
+        <button>Sil</button>
+      </div>
+    <div class="gizli" id="Ürünler">
+      <h1>Ürün Silme</h1>
+      <br />
+        <div class="flex">
+          <label> Ürün No: </label>
+          <input type="text" name="" id="" />
+        </div>
+        <button>Sil</button>
+      </div>
+    <div class="gizli" id="KapsamGrupları">
+      <h1>Kapsam Grubu Silme</h1>
+      <br />
+      <div>
+        <div class="flex">
+          <label> Kapsam Grubu No: </label>
+          <input type="text" name="" id="" />
+        </div>
+        <button>Sil</button>
+      </div>
+    </div>
+    <div class="gizli" id="EmisyonGrupları">
+      <h1>Emisyon Grubu Silme</h1>
+      <br />
+      <div>
+        <div class="flex">
+          <label> Emisyon No: </label>
+          <input type="text" name="" id="" />
+        </div>
+        <button>Sil</button>
+      </div>
+    </div>
+    <div class="gizli" id="MesaiKayıt">
+      <h1>Mesai Kayıt Silme</h1>
+      <br />
+      <div>
+        <div class="flex">
+          <label> Mesai Kayıt No: </label>
+          <input type="text" name="" id="" />
+        </div>
+        <button>Sil</button>
+      </div>
+    </div>
+    <div class="gizli" id="EmisyonKayıtFormu">
+      <h1> Emisyon Kayıt Formu Silme</h1>
+      <br />
+      <div>
+        <div class="flex">
+          <label> Emisyon Kayıt No: </label>
+          <input type="text" name="" id="" />
+        </div>
+        <button>Sil</button>
+      </div>
+    </div>
+    <div class="gizli" id="Kapsam1">
+      <h1>Kapsam 1 Silme</h1>
+      <br />
+      <div>
+        <div class="flex">
+          <label> Kapsam 1 No: </label>
+          <input type="text" name="" id="" />
+        </div>
+        <button>Sil</button>
+      </div>
+    </div>
+    <div class="gizli" id="Kapsam3">
+      <h1>Kapsam 3 Silme</h1>
+      <br />
+      <div>
+        <div class="flex">
+          <label> Kapsam 3 No: </label>
+          <input type="text" name="" id="" />
+        </div>
+        <button>Sil</button>
+      </div>
+    </div>
+    <div class="gizli" id="Kapsam2">
+      <h1>Kapsam 2 Silme</h1>
+      <br />
+      <div>
+        <div class="flex">
+          <label> Kapsam 2 No: </label>
+          <input type="text" name="" id="" />
+        </div>
+        <button>Sil</button>
+      </div>
+    </div>
+    <div class="gizli" id="Tipler">
+      <h1>Tip Silme</h1>
+      <br />
+      <div>
+        <div class="flex">
+          <label> Tip No: </label>
+          <input type="text" name="" id="" />
+        </div>
+        <button>Sil</button>
+      </div>
+    </div>
+    <div class="gizli" id="ÜretimGiriş">
+      <h1>Üretim Giriş Silme</h1>
+      <br />
+      <div>
+        <div class="flex">
+          <label> Üretim Giriş No: </label>
+          <input type="text" name="" id="" />
+        </div>
+        <button>Sil</button>
+      </div>
+    </div>
+    <div class="gizli" id="ÜretimMerkezleri">
+      <h1>Üretim Merkezi Silme</h1>
+      <br />
+      <div>
+        <div class="flex">
+          <label> Üretim Merkezi No: </label>
+          <input type="text" name="" id="" />
+        </div>
+        <button>Sil</button>
+      </div>
+    </div>
+    <div class="gizli" id="ÜretimKayıtFormu">
+      <h1>Üretim Kayıt Formu Silme</h1>
+      <br />
+      <div>
+        <div class="flex">
+          <label> Üretim Kayıt No: </label>
+          <input type="text" name="" id="" />
+        </div>
+        <button>Sil</button>
+      </div>
+    </div>
+    <div class="gizli" id="BelgeTakip">
+      <h1>Belge Takip Silme</h1>
+      <br />
+      <div>
+        <div class="flex">
+          <label> Belge Takip no: </label>
+          <input type="text" name="" id="" />
+        </div>
+        <button>Sil</button>
+      </div>
+    </div>
+    <script src="./sil.js"></script>
+      </body>
+    </html>
