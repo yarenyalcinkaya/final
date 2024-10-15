@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Görüntüleme Sayfası</title>
+  
+    <style>
+        
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid red;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 1200px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+select {
+  width: 100%;
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 16px;
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  margin: 0 auto;
+}
+
+button:hover {
+  background-color: #4cae4c;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  table-layout: auto;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  border: 3px solid green;
+
+}
+#buttonlar{
+  display: flex;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+button.action-btn {
+  padding: 5px 10px;
+  font-size: 14px;
+  margin: 2px;
+}
+
+button.update-btn {
+  background-color: #007bff;
+}
+
+button.delete-btn {
+  background-color: #dc3545;
+}
+
+button.update-btn:hover {
+  background-color: #0056b3;
+}
+
+button.delete-btn:hover {
+  background-color: #c82333;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Görüntüleme Sayfası</h1>
+        
+        <form id="viewForm">
+            <label for="itemSelect">Görüntülemek istediğinizi seçiniz:</label>
+            <select id="itemSelect" name="itemSelect">
+                <option value="">-- Seçiniz --</option>
+                <option value="Belgeler">Belgeler</option>
+                <option value="Birimler">Birimler</option>
+                <option value="Kaynaklar">Kaynaklar</option>
+                <option value="Ürünler">Ürünler</option>
+                <option value="Üretim Merkezleri">Üretim Merkezleri</option>
+                <option value="Kapsam Grupları">Kapsam Grupları</option>
+                <option value="Emisyon Grupları">Emisyon Grupları</option>
+                <option value="Tipler">Tipler</option>
+                <option value="Mesai Kayıt">Mesai Kayıt</option>
+                <option value="Belge Takip">Belge Takip</option>
+                <option value="Üretim Kayıt Formu">Üretim Kayıt Formu</option>
+                <option value="Üretim Giriş">Üretim Giriş</option>
+                <option value="Emisyon Kayıt Formu">Emisyon Kayıt Formu</option>
+                <option value="Kapsam 1">Kapsam 1</option>
+                <option value="Kapsam 2">Kapsam 2</option>
+                <option value="Kapsam 3">Kapsam 3</option>
+            </select>
+            <button type="button" onclick="loadTable()">Göster</button>
+          
+        </form>
+        
+        <div id="tableContainer"></div>
+    </div>
+
+    <script src="./görüntüleme.js"></script>
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Görüntüleme Sayfası</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        button {
+            padding: 8px 12px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button.delete {
+            background-color: #d9534f;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Belgeler Tablosu</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Belge Adı</th>
+                <th>Dosya Yolu</th>
+                <th>Açıklama</th>
+                <th>Muaf mı?</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody id="belgeTableBody">
+             Veriler buraya dinamik olarak eklenecek -->
+        <!-- </tbody>
+    </table>
+
+    <script>
+        // Örnek veri
+        const belgeler = [
+            {id: 1, belgeAdi: 'Belge1', dosyaYolu: '/belge1.pdf', aciklama: 'İlk belge', muafMi: 'Hayır'},
+            {id: 2, belgeAdi: 'Belge2', dosyaYolu: '/belge2.pdf', aciklama: 'İkinci belge', muafMi: 'Evet'},
+            {id: 3, belgeAdi: 'Belge3', dosyaYolu: '/belge3.pdf', aciklama: 'Üçüncü belge', muafMi: 'Hayır'}
+        ];
+
+        // Belgeler tablosunu doldurma fonksiyonu
+        function loadBelgeler() {
+            const tableBody = document.getElementById('belgeTableBody');
+            tableBody.innerHTML = ''; // Mevcut içeriği temizle
+
+            belgeler.forEach(belge => {
+                const row = document.createElement('tr');
+
+                row.innerHTML = `
+                    <td>${belge.id}</td>
+                    <td>${belge.belgeAdi}</td>
+                    <td>${belge.dosyaYolu}</td>
+                    <td>${belge.aciklama}</td>
+                    <td>${belge.muafMi}</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="delete" onclick="deleteBelge(${belge.id})">Sil</button>
+                            <button onclick="updateBelge(${belge.id})">Güncelle</button>
+                        </div>
+                    </td>
+                `;
+
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Silme fonksiyonu
+        function deleteBelge(id) {
+            alert('Belge ID ' + id + ' silindi.');
+            // Silme işlemi burada yapılacak
+        }
+
+        // Güncelleme fonksiyonu
+        function updateBelge(id) {
+            alert('Belge ID ' + id + ' güncelleniyor.');
+            // Güncelleme işlemi burada yapılacak
+        }
+
+        // Sayfa yüklendiğinde tabloyu doldur
+        window.onload = loadBelgeler;
+    </script>
+</body>
+</html> --> 
